@@ -46,8 +46,7 @@
     @yield('content')
 </div>
 <script src="/js/libs.js"></script>
-@yield('scripts.footer')
-
+@yield('scripts')
 @include('flash')
 </body>
 </html>

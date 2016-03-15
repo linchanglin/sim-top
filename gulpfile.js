@@ -16,8 +16,10 @@ elixir(function (mix) {
 
         .scripts([
             'libs/sweetalert-dev.js',
+            'libs/select2.min.js',
         ], './public/js/libs.js')
         .styles([
             'libs/sweetalert.css',
+            'libs/select2.min.css',
         ], './public/css/libs.css')
 });
