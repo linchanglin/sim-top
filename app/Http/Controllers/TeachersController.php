@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Repositories\BaseRepository;
 use App\User;
 use Illuminate\Http\Request;
 
@@ -9,10 +10,21 @@ use App\Http\Requests;
 
 class TeachersController extends Controller
 {
+
+    public $base;
+
+    public function __construct(BaseRepository $baseRepository)
+    {
+        $this->base = $baseRepository;
+
+        parent::__construct();
+    }
+
     public function index()
     {
-        $teachers = User::where('role_id',2)->get();
-        return view('teachers.index',compact('teachers'));
+        $teachers = User::where('role_id', 2)->orderBy('student_id')->paginate(10);
+
+        return view('teachers.index', compact('teachers'));
     }
 
     public function create()
@@ -29,21 +41,22 @@ class TeachersController extends Controller
 
     public function edit($student_id)
     {
-        dd($student_id);
-        $teacher = User::findOrFail($student_id);
-        return view('teachers.edit',compact('teacher'));
+        $teacher = $this->base->getByStudentId($student_id);
+
+        return view('teachers.edit', compact('teacher'));
     }
 
-    //public function update(Request $request,$student_id)
-    //{
-    //    $teacher = User::findOrFail($student_id);
-    //    $teacher->update($request->)
-    //    return redirect('/teachers');
-    //}
+    public function update(Request $request, $student_id)
+    {
+        $teacher = $this->base->getByStudentId($student_id);
+        $teacher->update($request->all());
+
+        return redirect('/teachers');
+    }
 
     public function destroy($student_id)
     {
-        $teacher = User::findOrFail($student_id);
+        $teacher = $this->base->getByStudentId($student_id);
         $teacher->delete();
 
         return redirect('/teachers');
