@@ -11,9 +11,10 @@ class PagesController extends Controller
 {
     public function home()
     {
-        $user=Auth::user()->student_id;
-        if(Auth::user()->password == bcrypt('123456')){
-            flash()->overlay('您好! '.$user,'请修改初始密码','info');
+        $userName=Auth::user()->name;
+        $hash=Auth::user()->password;
+        if(password_verify('123456', $hash)){
+            flash()->overlay('Hello! '.$userName,'请修改初始密码','info');
         };
         return view('pages.home');
     }

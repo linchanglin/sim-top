@@ -21,8 +21,11 @@
         </div>
         <div id="navbar" class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
-                <li class="active"><a href="#">教师管理</a></li>
-                <li><a href="#about">学生管理</a></li>
+                <li class="active"><a href="/teachers">教师管理</a></li>
+                <li><a href="/students">学生管理</a></li>
+                <li><a href="/courses">课程管理</a></li>
+                <li><a href="/courseTimes">课时管理</a></li>
+                <li><a href="/modules">模块管理</a></li>
             </ul>
 
             @if ($signedIn)

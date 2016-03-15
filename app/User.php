@@ -24,10 +24,13 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
-
-
     public function role()
     {
         return $this->hasOne('App\Role');
+    }
+
+    public function courses()
+    {
+        return $this->belongsToMany('App\Course');
     }
 }

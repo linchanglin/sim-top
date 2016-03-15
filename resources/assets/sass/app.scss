@@ -9,3 +9,22 @@ body {
 th {
   text-align: center;
 }
+
+.leftpanel {
+  background: #fff;
+  width: 220px;
+  position: fixed;
+}
+
+.mainpanel {
+  margin-left: 220px;
+  padding: 20px;
+  background: #d8dce3;
+  border-radius:5px
+}
+
+.contentpanel {
+  background: #fff;
+  border-radius: 5px
+}
+
