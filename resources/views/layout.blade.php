@@ -45,6 +45,7 @@
 <div class="container">
     @yield('content')
 </div>
+<script src="/js/jquery.min.js"></script>
 <script src="/js/libs.js"></script>
 @yield('scripts')
 @include('flash')

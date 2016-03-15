@@ -19,7 +19,11 @@
             <tr>
                 <td>{{ $courseTime->name }}</td>
                 <td>{{ $courseTime->description }}</td>
-                <td>{{ $courseTime->created_at }}</td>
+                <td>
+                    @foreach($courseTime->modules()->orderBy('name')->get() as $module)
+                        {{ $module->name }}&nbsp;&nbsp;
+                    @endforeach
+                </td>
                 <td>
 
                     <form class="form-horizontal" method="POST"
@@ -27,7 +31,7 @@
                         <input type="hidden" name="_token" value="{{ csrf_token() }}">
                         <input name="_method" type="hidden" value="DELETE">
 
-                        <a class="btn btn-info" href="/courseTimes/{{ $courseTime->id }}/edit">管理</a>
+                        <a class="btn btn-info" href="/courseTimes/{{ $courseTime->id }}/edit">编辑</a>
                         <button type="submit" class="btn btn-danger">删除</button>
                     </form>
                 </td>
