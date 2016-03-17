@@ -19,12 +19,24 @@ elixir(function (mix) {
             'libs/sweetalert-dev.js',
             'libs/select2.min.js',
             'libs/jquery.dynatable.js',
-            'libs/clean-blog.js',
+            'libs/jquery.js',
+            'libs/bootstrap.js',
+            'libs/jquery.flexslider-min.js',
+            'libs/jquery.isotope.js',
+            'libs/jquery.prettyPhoto.js',
+            'libs/filter.js',
+            'libs/custom.js',
         ], './public/js/libs.js')
         .styles([
             'libs/sweetalert.css',
             'libs/select2.min.css',
             'libs/jquery.dynatable.css',
-            'libs/clean-blog.css',
+            'libs/bootstrap.css',
+            'libs/flexslider.css',
+            'libs/prettyPhoto.css',
+            'libs/font-awesome.css',
+            'libs/font-awesome-ie7.css',
+            'libs/style.css',
+            'libs/blue.css',
         ], './public/css/libs.css')
 });

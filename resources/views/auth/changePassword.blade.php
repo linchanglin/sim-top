@@ -11,21 +11,12 @@
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="logreg-page">
-                                    <h3>登录到 <span class="color">管理中心</span></h3>
+                                    <h3><span class="color">修改密码</span></h3>
                                     <hr/>
                                     <div class="form">
                                         <!-- Login form (not working)-->
-                                        <form class="form-horizontal" method="POST" action="{{ url('/login') }}">
-                                            <!-- Username -->
+                                        <form class="form-horizontal" method="POST" action="/changePassword/change">
                                             {{ csrf_field() }}
-                                            <div class="form-group">
-                                                <label class="control-label col-md-3" for="student_id">学号</label>
-                                                <div class="col-md-8">
-                                                    <input type="text" class="form-control" id="student_id"
-                                                           name="student_id" value="{{ old('student_id') }}" required>
-                                                </div>
-                                            </div>
-                                            <!-- Password -->
                                             <div class="form-group">
                                                 <label class="control-label col-md-3" for="password">密码</label>
                                                 <div class="col-md-8">
@@ -34,17 +25,15 @@
                                                 </div>
                                             </div>
                                             <div class="form-group">
-                                                <div class="col-md-9 col-md-offset-3">
-                                                    <label class="checkbox-inline">
-                                                        <input type="checkbox" name="remember"> 记住我
-                                                    </label>
+                                                <label class="control-label col-md-3" for="password">确认密码</label>
+                                                <div class="col-md-8">
+                                                    <input type="password" class="form-control" id="password"
+                                                           name="password_confirmation" required>
                                                 </div>
                                             </div>
-                                            <!-- Buttons -->
                                             <div class="form-group">
-                                                <!-- Buttons -->
                                                 <div class="text-center">
-                                                    <button type="submit" class="btn btn-info">登录</button>
+                                                    <button type="submit" class="btn btn-info">确认</button>
                                                     <button type="reset" class="btn btn-default">重置</button>
                                                 </div>
                                             </div>

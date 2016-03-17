@@ -4,7 +4,7 @@
             title: "{{ session('flash_message.title') }}",
             text: "{{ session('flash_message.message') }}",
             type: "{{ session('flash_message.level') }}",
-            timer: 1700,
+            timer: 1800,
             showConfirmButton: false
         });
     </script>
@@ -16,7 +16,7 @@
             title: "{{ session('flash_message_overlay.title') }}",
             text: "{{ session('flash_message_overlay.message') }}",
             type: "{{ session('flash_message_overlay.level') }}",
-            confirmButtonText: 'Okey',
+            confirmButtonText: '好的',
         });
     </script>
 @endif
