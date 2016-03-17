@@ -21,7 +21,7 @@ class ModulesController extends Controller
 
     public function index()
     {
-        $modules = Module::orderBy('name')->paginate(10);
+        $modules = Module::orderBy('name')->get();
 
         return view('modules.index',compact('modules'));
     }

@@ -18,9 +18,13 @@ elixir(function (mix) {
             'libs/jquery.min.js',
             'libs/sweetalert-dev.js',
             'libs/select2.min.js',
+            'libs/jquery.dynatable.js',
+            'libs/clean-blog.js',
         ], './public/js/libs.js')
         .styles([
             'libs/sweetalert.css',
             'libs/select2.min.css',
+            'libs/jquery.dynatable.css',
+            'libs/clean-blog.css',
         ], './public/css/libs.css')
 });

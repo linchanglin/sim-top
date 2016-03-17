@@ -21,7 +21,7 @@ class StudentsController extends Controller
 
     public function index()
     {
-        $students = User::where('role_id', 1)->orderBy('student_id')->paginate(10);
+        $students = User::where('role_id', 1)->orderBy('student_id')->get();
 
         return view('students.index',compact('students'));
     }

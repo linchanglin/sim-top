@@ -2,19 +2,20 @@
 @section('content')
     <h3>学生管理</h3>
     <hr>
-    <div>
-        <div class="pull-right" style="margin-bottom: 20px">
-            <a href="/students/create" class="btn btn-normal btn-info">添加新学生</a>
-        </div>
+    <div class="text-right" style="margin-bottom: 20px">
+        <a href="/students/create" class="btn btn-normal btn-info">添加新学生</a>
     </div>
 
-    <table class="table table-bordered text-center">
+    <table id="my-table" class="table table-bordered text-center">
+        <thead class="dynatable-active-page">
         <tr>
             <th>学生学号</th>
             <th>学生姓名</th>
             <th>创建时间</th>
             <th>操作</th>
         </tr>
+        </thead>
+        <tbody>
         @foreach ($students as $student)
             <tr>
                 <td>{{ $student->student_id }}</td>
@@ -33,8 +34,6 @@
                 </td>
             </tr>
         @endforeach
+        </tbody>
     </table>
-    <div class="text-center">
-        {!! $students->links() !!}
-    </div>
 @stop

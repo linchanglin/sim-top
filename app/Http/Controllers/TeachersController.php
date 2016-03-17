@@ -22,7 +22,7 @@ class TeachersController extends Controller
 
     public function index()
     {
-        $teachers = User::where('role_id', 2)->orderBy('student_id')->paginate(10);
+        $teachers = User::where('role_id', 2)->orderBy('student_id')->get();
 
         return view('teachers.index', compact('teachers'));
     }

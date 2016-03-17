@@ -2,19 +2,20 @@
 @section('content')
     <h3>模块管理</h3>
     <hr>
-    <div>
-        <div class="pull-right" style="margin-bottom: 20px">
-            <a href="/modules/create" class="btn btn-normal btn-info">添加新模块</a>
-        </div>
+    <div class="text-right" style="margin-bottom: 20px">
+        <a href="/modules/create" class="btn btn-normal btn-info">添加新模块</a>
     </div>
 
-    <table class="table table-bordered text-center">
+    <table id="my-table" class="table table-bordered text-center">
+        <thead class="dynatable-active-page">
         <tr>
             <th>模块名称</th>
             <th>模块描述</th>
             <th>创建时间</th>
             <th>操作</th>
         </tr>
+        </thead>
+        <tbody>
         @foreach($modules as $module)
             <tr>
                 <td>{{ $module->name }}</td>
@@ -33,8 +34,7 @@
                 </td>
             </tr>
         @endforeach
+        </tbody>
     </table>
-    <div class="text-center">
-        {!! $modules->links() !!}
-    </div>
 @stop
+

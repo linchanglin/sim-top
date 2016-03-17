@@ -22,7 +22,7 @@ class CourseTimesController extends Controller
 
     public function index()
     {
-        $courseTimes = CourseTime::orderBy('name')->paginate(10);
+        $courseTimes = CourseTime::orderBy('name')->get();
 
         return view('courseTimes.index',compact('courseTimes'));
     }
