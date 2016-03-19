@@ -34,4 +34,14 @@ class Flash
     {
         return $this->create($title, $message,$level,'flash_message_overlay');
     }
+
+    public function confirm($title,$message,$confirmTitle,$confirmMessage)
+    {
+        session()->flash('flash_message_confirm', [
+            'title'   => $title,
+            'message' => $message,
+            'confirmTitle'   => $confirmTitle,
+            'confirmMessage'   => $confirmMessage,
+        ]);
+    }
 }

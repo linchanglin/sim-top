@@ -64,6 +64,6 @@ class CourseTimesController extends Controller
         $courseTime->modules()->detach();
         $courseTime->delete();
 
-        return redirect('/courseTimes');
+        return back();
     }
 }

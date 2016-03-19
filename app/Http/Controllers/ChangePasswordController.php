@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\User;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -35,6 +36,16 @@ class ChangePasswordController extends Controller
         $user->password = bcrypt($inputs['password']);
         $user->save();
         flash()->success('恭喜! ' . $user->name, '密码修改成功');
+
+        return back();
+    }
+
+    public function reset($student_id)
+    {
+        $user = User::where('student_id',$student_id)->first();
+        $user->password = bcrypt('123456');
+        $user->save();
+        flash()->success($user->name, '密码重置成功');
 
         return back();
     }

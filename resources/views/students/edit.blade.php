@@ -1,0 +1,1 @@
+@include('partials.person.edit',['person' => $student,'who' => 'students','whose' => '学生','whoseId' => '学生学号','role' => '1'])

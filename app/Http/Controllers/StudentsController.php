@@ -58,6 +58,6 @@ class StudentsController extends Controller
         $student = $this->base->getByStudentId($student_id);
         $student->delete();
 
-        return redirect('/students');
+        return back();
     }
 }

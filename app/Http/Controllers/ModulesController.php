@@ -58,6 +58,6 @@ class ModulesController extends Controller
         $module = $this->base->getByModuleId($id);
         $module->delete();
 
-        return redirect('/modules');
+        return back();
     }
 }
